@@ -1,0 +1,135 @@
+<meta charset="utf-8" lang="en">  <!-- this line allows UTF-8 characters in the .html file -->
+
+<!-- This template is based on the Princeton COS 423 LaTeX assignment template -->
+
+**P01 Greedy**
+
+# Author(s)
+
+<!-- Note: wrapping table in div.noheader will hide the table's header -->
+<!-- Note: wrapping table in div.firstcol will style the first column different from other columns -->
+<div class="noheader firstcol">
+                         |  <!-- must include spaces in header for Markdeep to see this as a table -->
+------------------------ | -------------
+name                     | David Deng
+time to complete         |  hours
+partner / collaborators  | Qiang Wang
+additional help          | 
+</div>
+
+# Problem Description
+
+A group of soccer players decide to play a game. Here is the setup of the game: There is a starting point and a goal, being $n$ yards apart. A group of $m$ players ($m<=n$) stand at fixed, distinct locations between the starting point and the goal throughout the game (in this problem we assume all players are at an integer number of yards from the starting point). The game starts with the first player at the starting point, passing the ball forward to some other player closer to the goal. The objective of the game is to pass the ball continuously from the first player forward until it reaches the goal. 
+
+Each player also has a limit of distance that they can reliably pass the ball forward. Now the question is: knowing the limit of each player, what is the minimum number of passes needed to pass the ball reliably beyond the goal?
+
+# Input
+
+The first line of the input is a single integer $n$, denoting the number of yards from the starting point to the goal. The second line is an empty line.
+
+Then follows $n$ lines, each containing one non-negative integer, $S_i$, where $0 <= i <= n-1$. Each integer $S_i$ describes the limit of passing distance of the player at the $i$'th yard from the starting point. If $S_i = 0$, it means there is no player at the $i$'th yard from the starting point. Assume there is no player at the goal.
+
+# Output
+
+Output should be a single number, indicating the minimum number of passes needed to pass the ball beyond the goal. If it is impossible to pass the ball to the goal, print "Impossible".
+
+# Examples
+
+Input
+~~~~~~noformat
+4
+
+1
+1
+1
+1
+~~~~~~
+Output
+~~~~~~noformat
+4
+~~~~~~
+
+Input
+~~~~~~noformat
+3
+
+2
+1
+1
+~~~~~~
+Output
+~~~~~~noformat
+2
+~~~~~~
+
+Input
+~~~~~~noformat
+4
+
+2
+3
+1
+1
+~~~~~~
+Output
+~~~~~~noformat
+2
+~~~~~~
+
+Input
+~~~~~~noformat
+2
+
+1
+0
+~~~~~~
+Output
+~~~~~~noformat
+Impossible
+~~~~~~
+
+<!--   Feel free to modify the following to fit a theme of your choosing   -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> <!-- a sans-serif font -->
+<style>  /* A TAYLOR-INSPIRED THEME */
+    body {font-family:'Open Sans',sans-serif;}
+    .md a:link, .md a:visited {color:hsl(252,23.0%,44.3%); font-family:'Open Sans',sans-serif;}
+    .md table.table th {background-color:hsl(252,23.0%,44.3%);}
+    .md .noheader th {display:none;}
+    .md .firstcol td:first-child {white-space:pre;color:white;vertical-align:top;font-weight:bold;border-color:black;background:hsl(252,23.0%,54.3%);}
+    .md .firstcol tr:nth-child(even) td:first-child {background:hsl(252,23.0%,44.3%);}
+</style>
+
+<!-- ****************************** -->
+<!--    Leave the content below     -->
+<!-- ****************************** -->
+
+<!-- The script and style below are added for clarity and to workaround a bug -->
+<script>
+    // this is a hack to workaround a bug in Markdeep+Mathjax, where
+    // `&#36;`` is automatically converted to `\(`` and `\)`` too soon.
+    // the following code will replace the innerHTML of all elements
+    // with class "dollar" with a dollar sign.
+    setTimeout(function() {
+        var dollars = document.getElementsByClassName('dollar');
+        for(var i = 0; i < dollars.length; i++) {
+            dollars[i].innerHTML = '&#' + '36;'; // split to prevent conversion to $
+        }
+    }, 1000);
+</script>
+<style>
+    /* adding some styling to <code> tags (but not <pre><code> coding blocks!) */
+    :not(pre) > code {
+        background-color: rgba(0,0,0,0.05);
+        outline: 1px solid rgba(0,0,0,0.15);
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+    }
+    /* fixes table of contents of medium-length document from looking weird if admonitions are behind */
+    .md div.mediumTOC { background: white; }
+    .md div.admonition { position: initial !important; }
+</style>
+
+<!--   Leave the following Markdeep formatting code, as this will format your text above to look nice in a wed browser   -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible");</script>
