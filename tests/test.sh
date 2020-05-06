@@ -1,4 +1,7 @@
 #!/bin/bash
+DIR="$(dirname ${BASH_SOURCE[0]})"
+cd "$DIR"
+
 TARGET_SCRIPT="python3 ../start.py"
 echo "testing on $TARGET_SCRIPT"
 
