@@ -19,19 +19,19 @@ additional help          | Input from Dr. Denning
 
 # Problem Description
 
-A group of soccer players decide to play a game. Here is the setup of the game: There is a starting point and a goal, being $n$ yards apart. A group of $m$ players ($m<=n$) stand at fixed, distinct locations between the starting point and the goal throughout the game (in this problem we assume all players are at an integer number of yards from the starting point). The game starts with the first player at the starting point, passing the ball forward to some other player closer to the goal. The objective of the game is to pass the ball continuously from the first player forward until it reaches the goal. 
+A group of soccer players decide to play a game. Here is the setup of the game: The ball is at its initial location, being $n$ yards from the goal. A group of $m$ players ($m<=n$) stand at fixed, distinct locations between the ball's initial location and the goal throughout the game (in this problem we assume all players are at an integer number of yards from the ball's initial location). The game starts with the first player at the ball's initial location, passing the ball forward to some other player closer to the goal. The objective of the game is to pass the ball continuously from the first player forward until it reaches the goal. 
 
-Each player also has a limit of distance that they can reliably pass the ball forward. Now the question is: knowing the limit of each player, what is the minimum number of passes needed to pass the ball reliably beyond the goal?
+Each player also has a capacity, or a limit of distance that they can reliably pass the ball forward. Now the question is: knowing the limit of each player, what is the minimum number of passes needed to pass the ball reliably beyond the goal?
 
 # Input
 
-The first line of the input is a single integer $n$, denoting the number of yards from the starting point to the goal. The second line is an empty line.
+The first line of the input is a single integer $n$, denoting the number of yards from the ball's initial location to the goal. The second line is an empty line.
 
-Then follows $n$ lines, each containing one non-negative integer, $S_i$, where $0 <= i <= n-1$. Each integer $S_i$ describes the limit of passing distance of the player at the $i$'th yard from the starting point. If $S_i = 0$, it means there is no player at the $i$'th yard from the starting point. Assume there is no player at the goal.
+Then follows $n$ lines, each containing one non-negative integer, $S_i$ ($0 <= i <= n-1$). Each integer $S_i$ describes the capacity (the limit of passing distance), in yards, of the player at the $i$'th yard from the ball's initial location. If $S_i = 0$, it means there is no player at the $i$'th yard from the ball's initial location. Assume there is no player at the goal.
 
 # Output
 
-Output should be a single number, indicating the minimum number of passes needed to pass the ball beyond the goal. If it is impossible to pass the ball to the goal, print "Impossible".
+Output should be a single number, indicating the minimum number of passes needed to pass the ball from its initial location to the goal. If it is impossible to pass the ball to the goal, print "Impossible".
 
 # Examples
 
